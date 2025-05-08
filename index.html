@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ワイサポ - ワイン販売・購買プラットフォーム</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-gradient-to-b from-red-900 to-red-700 min-h-screen flex flex-col items-center justify-center text-white">
+  <div class="max-w-5xl mx-auto px-4 py-12 text-center">
+    <h1 class="text-5xl font-bold mb-6">ワイサポ</h1>
+    <p class="text-2xl mb-12">ワイン販売・購買プラットフォーム</p>
+    
+    <div class="flex flex-col md:flex-row justify-center gap-8 mt-8">
+      <div class="bg-white text-red-800 p-6 rounded-lg shadow-lg">
+        <div class="flex flex-col items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="text-xl font-bold">販売側</span>
+          <span class="text-sm mt-2">社内管理画面</span>
+        </div>
+        
+        <div class="text-left grid grid-cols-2 gap-2">
+          <a href="admin/index.html" class="text-red-800 hover:text-red-600 transition">受注一覧</a>
+          <a href="admin/customer-list.html" class="text-red-800 hover:text-red-600 transition">顧客管理</a>
+          <a href="admin/inventory.html" class="text-red-800 hover:text-red-600 transition">在庫管理</a>
+          <a href="admin/activity-list.html" class="text-red-800 hover:text-red-600 transition">活動管理</a>
+          <a href="admin/discount-rules.html" class="text-red-800 hover:text-red-600 transition">取引調整</a>
+          <a href="admin/invoice-list.html" class="text-red-800 hover:text-red-600 transition">請求回収管理</a>
+          <a href="admin/delivery-status.html" class="text-red-800 hover:text-red-600 transition">納品状況確認</a>
+          <a href="admin/dashboard.html" class="text-red-800 hover:text-red-600 transition">ダッシュボード</a>
+        </div>
+      </div>
+      
+      <div class="bg-white text-red-800 p-6 rounded-lg shadow-lg">
+        <div class="flex flex-col items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="text-xl font-bold">購買側</span>
+          <span class="text-sm mt-2">顧客ポータル</span>
+        </div>
+        
+        <div class="text-left grid grid-cols-2 gap-2">
+          <a href="portal/index.html" class="text-red-800 hover:text-red-600 transition">ダッシュボード</a>
+          <a href="portal/order.html" class="text-red-800 hover:text-red-600 transition">注文入力</a>
+          <a href="portal/history.html" class="text-red-800 hover:text-red-600 transition">注文履歴</a>
+          <a href="portal/delivery.html" class="text-red-800 hover:text-red-600 transition">納品確認</a>
+          <a href="portal/cellar.html" class="text-red-800 hover:text-red-600 transition">マイセラー在庫確認</a>
+          <a href="portal/usage.html" class="text-red-800 hover:text-red-600 transition">使用実績登録</a>
+          <a href="portal/catalog.html" class="text-red-800 hover:text-red-600 transition">ワイン検索</a>
+          <a href="portal/notice.html" class="text-red-800 hover:text-red-600 transition">お知らせ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-sm text-white/80">
+      <p>このサイトはモックアップです。実際のサービスではありません。</p>
+    </div>
+  </div>
+</body>
+</html>

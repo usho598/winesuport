@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用実績登録 | ワイサポ顧客ポータル</title>
+  <meta data-page-title="使用実績登録" content="使用実績登録">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+  
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="px-4 py-3 text-sm border-b border-red-900">
+        <div class="font-medium">株式会社山田商事</div>
+        <div>山田一郎 様</div>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            ダッシュボード
+          </a>
+          <a href="order.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            注文入力
+          </a>
+          <a href="history.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            注文履歴
+          </a>
+          <a href="delivery.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品確認
+          </a>
+          <a href="cellar.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            マイセラー在庫確認
+          </a>
+          <a href="usage.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            使用実績登録
+          </a>
+          <a href="catalog.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            ワイン検索
+          </a>
+          <a href="notice.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            お知らせ
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ワイサポ顧客ポータル v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">使用実績登録</div>
+        </div>
+        <div class="header-actions">
+          <div class="relative mr-4">
+            <button class="notification-badge bg-gray-200 rounded-full p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span class="notification-indicator">3</span>
+            </button>
+          </div>
+          <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">ログアウト</button>
+        </div>
+      </header>
+
+      <main class="content" x-data="{ activeTab: 'register' }">
+        <div class="border-b border-gray-200 mb-6">
+          <nav class="-mb-px flex space-x-8">
+            <button @click="activeTab = 'register'" :class="activeTab === 'register' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+              使用実績登録
+            </button>
+            <button @click="activeTab = 'history'" :class="activeTab === 'history' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+              登録履歴
+            </button>
+          </nav>
+        </div>
+
+        <div x-show="activeTab === 'register'">
+          <form x-data="{
+            selectedCellar: '',
+            usageDate: '',
+            usageNote: '',
+            lineItems: [
+              { id: 1, wine: '', wineName: '', quantity: 1, stockAvailable: 0 }
+            ],
+            wines: [
+              { id: 'W001', name: 'シャトー・マルゴー 2018', stock: 18 },
+              { id: 'W002', name: 'シャブリ グランクリュ 2019', stock: 3 },
+              { id: 'W003', name: 'ドン・ペリニヨン 2012', stock: 1 },
+              { id: 'W004', name: 'カベルネ・ソーヴィニヨン 2020', stock: 24 },
+              { id: 'W005', name: 'ソーヴィニヨン・ブラン 2021', stock: 0 }
+            ],
+            addLineItem() {
+              this.lineItems.push({ id: this.lineItems.length + 1, wine: '', wineName: '', quantity: 1, stockAvailable: 0 });
+            },
+            removeLineItem(index) {
+              this.lineItems.splice(index, 1);
+            },
+            updateWineInfo(index) {
+              const wineId = this.lineItems[index].wine;
+              if (wineId) {
+                const wine = this.wines.find(w => w.id === wineId);
+                if (wine) {
+                  this.lineItems[index].wineName = wine.name;
+                  this.lineItems[index].stockAvailable = wine.stock;
+                }
+              } else {
+                this.lineItems[index].wineName = '';
+                this.lineItems[index].stockAvailable = 0;
+              }
+            }
+          }">
+            <div class="bg-white rounded shadow p-6 mb-6">
+              <h2 class="text-lg font-medium mb-4">基本情報</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm text-gray-600 mb-2">マイセラー場所 <span class="text-red-600">*</span></label>
+                  <div class="relative">
+                    <select x-model="selectedCellar" class="w-full border rounded px-3 py-2 appearance-none bg-white" required>
+                      <option value="">マイセラー場所を選択してください</option>
+                      <option value="tokyo">東京本社</option>
+                      <option value="osaka">大阪支社</option>
+                      <option value="restaurant">レストラン「フレンチ山田」</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-sm text-gray-600 mb-2">使用日 <span class="text-red-600">*</span></label>
+                  <input type="date" x-model="usageDate" class="w-full border rounded px-3 py-2" required>
+                </div>
+                
+                <div class="md:col-span-2">
+                  <label class="block text-sm text-gray-600 mb-2">使用目的・備考</label>
+                  <textarea x-model="usageNote" class="w-full border rounded px-3 py-2 h-24" placeholder="イベント名や用途など、必要に応じてご記入ください"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded shadow p-6 mb-6">
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-medium">使用ワイン情報</h2>
+                <button type="button" @click="addLineItem" class="bg-red-600 text-white px-3 py-1 rounded text-sm">
+                  ＋ ワイン追加
+                </button>
+              </div>
+              
+              <div class="grid grid-cols-12 gap-2 py-2 font-medium text-sm bg-gray-50 px-3 rounded-t border-b">
+                <div class="col-span-6">ワイン</div>
+                <div class="col-span-2">数量</div>
+                <div class="col-span-3">現在庫数</div>
+                <div class="col-span-1"></div>
+              </div>
+              
+              <template x-for="(item, index) in lineItems" :key="item.id">
+                <div class="grid grid-cols-12 gap-2 py-3 border-b items-center px-3">
+                  <div class="col-span-6">
+                    <div class="relative">
+                      <select x-model="item.wine" @change="updateWineInfo(index)" class="w-full border rounded px-3 py-2 appearance-none bg-white">
+                        <option value="">ワインを選択</option>
+                        <template x-for="wine in wines" :key="wine.id">
+                          <option :value="wine.id" x-text="wine.name + (wine.stock === 0 ? '（在庫なし）' : '')" :disabled="wine.stock === 0"></option>
+                        </template>
+                      </select>
+                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-span-2">
+                    <input type="number" x-model="item.quantity" min="1" :max="item.stockAvailable" class="w-full border rounded px-3 py-2" :disabled="!item.wine || item.stockAvailable === 0">
+                  </div>
+                  <div class="col-span-3">
+                    <div class="flex items-center">
+                      <span x-text="item.stockAvailable" class="text-sm"></span>
+                      <span class="text-sm text-gray-500 ml-1">本</span>
+                      <template x-if="item.stockAvailable > 0 && item.quantity > 0">
+                        <span class="text-sm text-gray-500 ml-2">→ 残り<span x-text="item.stockAvailable - item.quantity"></span>本</span>
+                      </template>
+                    </div>
+                  </div>
+                  <div class="col-span-1">
+                    <button type="button" @click="removeLineItem(index)" class="text-red-600 hover:text-red-800" :disabled="lineItems.length === 1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <div class="flex justify-end space-x-4">
+              <button type="button" class="px-6 py-2 border border-gray-300 rounded shadow-sm text-gray-700 bg-white hover:bg-gray-50">
+                キャンセル
+              </button>
+              <button type="submit" class="px-6 py-2 bg-red-600 text-white rounded shadow-sm hover:bg-red-700">
+                使用実績を登録
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-sm font-medium text-yellow-800">使用実績登録に関する注意事項</h3>
+                <div class="mt-2 text-sm text-yellow-700">
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>使用実績は登録日から3日以内であれば修正が可能です。</li>
+                    <li>登録された使用実績は、マイセラー在庫から自動的に減算されます。</li>
+                    <li>登録された使用実績は、次回の請求に反映されます。</li>
+                    <li>ご不明な点がございましたら、担当営業までお問い合わせください。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="activeTab === 'history'">
+          <div class="bg-white p-4 rounded shadow mb-6">
+            <div class="flex flex-wrap gap-4">
+              <div class="w-64">
+                <label class="block text-sm text-gray-600 mb-1">マイセラー場所</label>
+                <select class="w-full border rounded px-3 py-2">
+                  <option>すべて</option>
+                  <option>東京本社</option>
+                  <option>大阪支社</option>
+                  <option>レストラン「フレンチ山田」</option>
+                </select>
+              </div>
+              <div class="w-64">
+                <label class="block text-sm text-gray-600 mb-1">使用日</label>
+                <div class="flex gap-2">
+                  <input type="date" class="w-full border rounded px-3 py-2">
+                  <span class="self-center">〜</span>
+                  <input type="date" class="w-full border rounded px-3 py-2">
+                </div>
+              </div>
+              <div class="w-64">
+                <label class="block text-sm text-gray-600 mb-1">ワイン名</label>
+                <input type="text" class="w-full border rounded px-3 py-2" placeholder="ワイン名を入力">
+              </div>
+              <div class="self-end">
+                <button class="bg-red-600 text-white px-4 py-2 rounded">検索</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded shadow overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">使用実績ID</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">使用日</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">マイセラー場所</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ワイン</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">数量</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">請求状況</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">U-2024045</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/18</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">大阪支社</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">ドン・ペリニヨン 2012</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">未請求</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="#" class="text-red-600 hover:text-red-900 mr-3">詳細</a>
+                    <a href="#" class="text-red-600 hover:text-red-900">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">U-2024044</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/15</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">レストラン「フレンチ山田」</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">カベルネ・ソーヴィニヨン 2020</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">未請求</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="#" class="text-red-600 hover:text-red-900 mr-3">詳細</a>
+                    <a href="#" class="text-red-600 hover:text-red-900">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">U-2024042</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/10</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">レストラン「フレンチ山田」</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">ソーヴィニヨン・ブラン 2021</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">未請求</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="#" class="text-red-600 hover:text-red-900 mr-3">詳細</a>
+                    <a href="#" class="text-red-600 hover:text-red-900">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">U-2024038</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/05</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">東京本社</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">シャトー・マルゴー 2018</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">請求済</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="#" class="text-red-600 hover:text-red-900 mr-3">詳細</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">U-2024035</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/03/28</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">東京本社</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">シャブリ グランクリュ 2019</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">請求済</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="#" class="text-red-600 hover:text-red-900 mr-3">詳細</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+              <div class="flex-1 flex justify-between sm:hidden">
+                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">前へ</a>
+                <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">次へ</a>
+              </div>
+              <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-sm text-gray-700">
+                    <span class="font-medium">1</span>
+                    ページ
+                    <span class="font-medium">5</span>
+                    件表示（全
+                    <span class="font-medium">24</span>
+                    件）
+                  </p>
+                </div>
+                <div>
+                  <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                      <span class="sr-only">Previous</span>
+                      &lt;
+                    </a>
+                    <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                      1
+                    </a>
+                    <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                      2
+                    </a>
+                    <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                      3
+                    </a>
+                    <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                      4
+                    </a>
+                    <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                      5
+                    </a>
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                      <span class="sr-only">Next</span>
+                      &gt;
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      const currentPage = window.location.pathname.split('/').pop();
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

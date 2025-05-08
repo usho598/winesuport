@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注文入力 | ワイサポ顧客ポータル</title>
+  <meta data-page-title="注文入力" content="注文入力">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドナビゲーション -->
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="px-4 py-3 text-sm border-b border-red-900">
+        <div class="font-medium">株式会社山田商事</div>
+        <div>山田一郎 様</div>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            ダッシュボード
+          </a>
+          <a href="order.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            注文入力
+          </a>
+          <a href="history.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            注文履歴
+          </a>
+          <a href="delivery.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品確認
+          </a>
+          <a href="cellar.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            マイセラー在庫確認
+          </a>
+          <a href="usage.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            使用実績登録
+          </a>
+          <a href="catalog.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            ワイン検索
+          </a>
+          <a href="notice.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            お知らせ
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ワイサポ顧客ポータル v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <!-- ヘッダー -->
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">注文入力</div>
+        </div>
+        <div class="header-actions">
+          <div class="relative mr-4">
+            <button class="notification-badge bg-gray-200 rounded-full p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span class="notification-indicator">3</span>
+            </button>
+          </div>
+          <button class="btn btn-primary">ログアウト</button>
+        </div>
+      </header>
+
+      <!-- コンテンツエリア -->
+      <main class="content">
+        <form x-data="{
+          selectedDeliveryLocation: '',
+          deliveryLocations: [
+            { id: 1, name: '東京本社' },
+            { id: 2, name: '大阪支社' },
+            { id: 3, name: '横浜工場' }
+          ],
+          deliveryDate: '',
+          notes: '',
+          lineItems: [
+            { id: 1, product: '', productName: '', quantity: 1, price: 0, stockAvailable: 0 }
+          ],
+          products: [
+            { id: 'P001', name: 'シャトー・マルゴー 2018', price: 15000, stockAvailable: 120 },
+            { id: 'P002', name: 'バローロ・リゼルヴァ 2017', price: 5000, stockAvailable: 45 },
+            { id: 'P003', name: 'プルミエ・クリュ・シャブリ 2019', price: 8000, stockAvailable: 65 },
+            { id: 'P004', name: 'ナパ・ヴァレー・カベルネ 2020', price: 35000, stockAvailable: 0 },
+            { id: 'P005', name: 'マールボロ・ソーヴィニヨン・ブラン 2021', price: 980, stockAvailable: 230 }
+          ],
+          addLineItem() {
+            this.lineItems.push({ id: this.lineItems.length + 1, product: '', productName: '', quantity: 1, price: 0, stockAvailable: 0 });
+          },
+          removeLineItem(index) {
+            this.lineItems.splice(index, 1);
+          },
+          updateProductInfo(index) {
+            const productId = this.lineItems[index].product;
+            if (productId) {
+              const product = this.products.find(p => p.id === productId);
+              if (product) {
+                this.lineItems[index].productName = product.name;
+                this.lineItems[index].price = product.price;
+                this.lineItems[index].stockAvailable = product.stockAvailable;
+              }
+            } else {
+              this.lineItems[index].productName = '';
+              this.lineItems[index].price = 0;
+              this.lineItems[index].stockAvailable = 0;
+            }
+          },
+          calculateSubtotal() {
+            return this.lineItems.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+          },
+          calculateTax() {
+            return Math.floor(this.calculateSubtotal() * 0.1);
+          },
+          calculateTotal() {
+            return this.calculateSubtotal() + this.calculateTax();
+          }
+        }">
+          <!-- 納品先情報 -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <h2 class="card-title">納品先情報</h2>
+            </div>
+            <div class="card-body">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">納品先 <span class="text-red-600">*</span></label>
+                  <div class="relative">
+                    <select x-model="selectedDeliveryLocation" class="form-control" required>
+                      <option value="">納品先を選択してください</option>
+                      <template x-for="location in deliveryLocations" :key="location.id">
+                        <option :value="location.id" x-text="location.name"></option>
+                      </template>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">希望納期 <span class="text-red-600">*</span></label>
+                  <input type="date" x-model="deliveryDate" class="form-control" required min="2024-04-25">
+                  <div class="mt-1 text-xs text-gray-500">※3営業日以降の日付を指定してください</div>
+                </div>
+              </div>
+              <div class="form-group mt-4">
+                <label class="form-label">備考</label>
+                <textarea x-model="notes" class="form-control h-24" placeholder="納品時の要望等があればご記入ください。"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- 商品情報 -->
+          <div class="card mb-6">
+            <div class="card-header">
+              <h2 class="card-title">商品情報</h2>
+              <button type="button" @click="addLineItem" class="btn btn-primary">
+                ＋ 商品追加
+              </button>
+            </div>
+            <div class="card-body p-0">
+              <!-- 明細行ヘッダー -->
+              <div class="grid grid-cols-12 gap-2 py-2 font-medium text-sm bg-gray-50 px-3 border-b">
+                <div class="col-span-5">商品</div>
+                <div class="col-span-2">数量</div>
+                <div class="col-span-2">在庫数</div>
+                <div class="col-span-2">単価</div>
+                <div class="col-span-1"></div>
+              </div>
+              
+              <!-- 明細行 -->
+              <template x-for="(item, index) in lineItems" :key="item.id">
+                <div class="grid grid-cols-12 gap-2 py-3 border-b items-center px-3">
+                  <div class="col-span-5">
+                    <div class="relative">
+                      <select x-model="item.product" @change="updateProductInfo(index)" class="form-control">
+                        <option value="">商品を選択</option>
+                        <template x-for="product in products" :key="product.id">
+                          <option :value="product.id" x-text="product.name + (product.stockAvailable === 0 ? '（在庫なし）' : '')" :disabled="product.stockAvailable === 0"></option>
+                        </template>
+                      </select>
+                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-span-2">
+                    <input type="number" x-model="item.quantity" min="1" :max="item.stockAvailable" class="form-control" :disabled="!item.product || item.stockAvailable === 0">
+                  </div>
+                  <div class="col-span-2">
+                    <div class="flex items-center">
+                      <span x-text="item.stockAvailable" class="text-sm"></span>
+                      <span class="text-sm text-gray-500 ml-1">個</span>
+                    </div>
+                  </div>
+                  <div class="col-span-2">
+                    <div class="flex items-center">
+                      <span class="text-sm">¥</span>
+                      <span x-text="item.price.toLocaleString()" class="text-sm ml-1"></span>
+                    </div>
+                  </div>
+                  <div class="col-span-1">
+                    <button type="button" @click="removeLineItem(index)" class="text-red-600 hover:text-red-800" :disabled="lineItems.length === 1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </template>
+              
+              <!-- 小計表示 -->
+              <div class="p-4 flex justify-end">
+                <div class="w-64">
+                  <div class="flex justify-between py-2">
+                    <span>小計:</span>
+                    <span>¥<span x-text="calculateSubtotal().toLocaleString()"></span></span>
+                  </div>
+                  <div class="flex justify-between py-2">
+                    <span>消費税:</span>
+                    <span>¥<span x-text="calculateTax().toLocaleString()"></span></span>
+                  </div>
+                  <div class="flex justify-between py-2 font-bold">
+                    <span>合計:</span>
+                    <span>¥<span x-text="calculateTotal().toLocaleString()"></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- カタログから追加ボタン -->
+          <div class="mb-6 text-center">
+            <a href="catalog.html" class="inline-flex items-center text-primary hover:text-red-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+              カタログから商品を追加する
+            </a>
+          </div>
+
+          <!-- 確認・送信ボタン -->
+          <div class="flex justify-center space-x-4">
+            <button type="button" class="btn btn-ghost">
+              下書き保存
+            </button>
+            <button type="submit" class="btn btn-primary">
+              注文内容を確認
+            </button>
+          </div>
+        </form>
+        
+        <!-- サポート情報 -->
+        <div class="card mt-8">
+          <div class="card-header">
+            <h3 class="card-title">サポート情報</h3>
+          </div>
+          <div class="card-body">
+            <div class="text-sm text-gray-600">
+              <p class="mb-2">ご不明な点がございましたら、担当営業または下記のお問い合わせ先までご連絡ください。</p>
+              <p>電話：03-1234-5678（平日 9:00〜18:00）</p>
+              <p>メール：support@winesupport.example.com</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // ページ読み込み時に共通スクリプトを実行
+    document.addEventListener('DOMContentLoaded', function() {
+      // サイドナビの現在のページをアクティブにする
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

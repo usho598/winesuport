@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ワイン検索 | ワイサポ顧客ポータル</title>
+  <meta data-page-title="ワイン検索" content="ワイン検索">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+  
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="px-4 py-3 text-sm border-b border-red-900">
+        <div class="font-medium">株式会社山田商事</div>
+        <div>山田一郎 様</div>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            ダッシュボード
+          </a>
+          <a href="order.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            注文入力
+          </a>
+          <a href="history.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            注文履歴
+          </a>
+          <a href="delivery.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品確認
+          </a>
+          <a href="cellar.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            マイセラー在庫確認
+          </a>
+          <a href="usage.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            使用実績登録
+          </a>
+          <a href="catalog.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            ワイン検索
+          </a>
+          <a href="notice.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            お知らせ
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ワイサポ顧客ポータル v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">ワイン検索</div>
+        </div>
+        <div class="header-actions">
+          <div class="relative mr-4">
+            <button class="notification-badge bg-gray-200 rounded-full p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span class="notification-indicator">3</span>
+            </button>
+          </div>
+          <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">ログアウト</button>
+        </div>
+      </header>
+
+      <main class="content" x-data="{ showFilters: false, activeView: 'grid', selectedWine: null }">
+        <div class="flex items-center mb-6">
+          <div class="flex-1 relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <input type="text" placeholder="ワイン名、生産国、ぶどう品種などを入力" class="w-full pl-10 pr-4 py-2 border rounded-lg">
+          </div>
+          <button @click="showFilters = !showFilters" class="ml-4 flex items-center text-gray-600 px-3 py-2 border rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+            </svg>
+            フィルター
+          </button>
+          <div class="ml-4 flex border rounded-lg overflow-hidden">
+            <button @click="activeView = 'grid'" :class="activeView === 'grid' ? 'bg-gray-200' : 'bg-white'" class="px-3 py-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+            </button>
+            <button @click="activeView = 'list'" :class="activeView === 'list' ? 'bg-gray-200' : 'bg-white'" class="px-3 py-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div x-show="showFilters" class="bg-white p-4 rounded-lg shadow mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">ワインタイプ</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>赤ワイン</option>
+                <option>白ワイン</option>
+                <option>ロゼワイン</option>
+                <option>スパークリング</option>
+                <option>デザートワイン</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">生産国</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>フランス</option>
+                <option>イタリア</option>
+                <option>スペイン</option>
+                <option>アメリカ</option>
+                <option>オーストラリア</option>
+                <option>チリ</option>
+                <option>日本</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">価格帯</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>～5,000円</option>
+                <option>5,000円～10,000円</option>
+                <option>10,000円～30,000円</option>
+                <option>30,000円～</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">在庫状況</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>在庫あり</option>
+                <option>予約受付中</option>
+                <option>入荷待ち</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">ぶどう品種</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>カベルネ・ソーヴィニヨン</option>
+                <option>メルロー</option>
+                <option>ピノ・ノワール</option>
+                <option>シャルドネ</option>
+                <option>ソーヴィニヨン・ブラン</option>
+                <option>リースリング</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">ヴィンテージ</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>2020年以降</option>
+                <option>2015年～2019年</option>
+                <option>2010年～2014年</option>
+                <option>2000年～2009年</option>
+                <option>1999年以前</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">地域</label>
+              <select class="w-full border rounded px-3 py-2">
+                <option>すべて</option>
+                <option>ボルドー</option>
+                <option>ブルゴーニュ</option>
+                <option>シャンパーニュ</option>
+                <option>トスカーナ</option>
+                <option>リオハ</option>
+                <option>ナパ・ヴァレー</option>
+              </select>
+            </div>
+            <div class="flex items-end">
+              <button class="bg-red-600 text-white px-4 py-2 rounded w-full">検索</button>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="activeView === 'grid'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div class="bg-white rounded-lg shadow overflow-hidden" @click="selectedWine = 'wine1'">
+            <div class="relative pb-2/3 bg-gray-200">
+              <img src="https://via.placeholder.com/300x400" alt="シャトー・マルゴー 2018" class="absolute h-full w-full object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-medium text-lg">シャトー・マルゴー</h3>
+                  <p class="text-gray-600 text-sm">2018</p>
+                </div>
+                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">在庫あり</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-center text-sm">
+                  <span class="text-gray-600">タイプ:</span>
+                  <span class="ml-2">赤ワイン</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">生産国:</span>
+                  <span class="ml-2">フランス</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">地域:</span>
+                  <span class="ml-2">ボルドー</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="font-bold text-lg">¥75,000</span>
+                <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden" @click="selectedWine = 'wine2'">
+            <div class="relative pb-2/3 bg-gray-200">
+              <img src="https://via.placeholder.com/300x400" alt="シャブリ グランクリュ 2019" class="absolute h-full w-full object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-medium text-lg">シャブリ グランクリュ</h3>
+                  <p class="text-gray-600 text-sm">2019</p>
+                </div>
+                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">在庫あり</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-center text-sm">
+                  <span class="text-gray-600">タイプ:</span>
+                  <span class="ml-2">白ワイン</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">生産国:</span>
+                  <span class="ml-2">フランス</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">地域:</span>
+                  <span class="ml-2">ブルゴーニュ</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="font-bold text-lg">¥15,000</span>
+                <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden" @click="selectedWine = 'wine3'">
+            <div class="relative pb-2/3 bg-gray-200">
+              <img src="https://via.placeholder.com/300x400" alt="ドン・ペリニヨン 2012" class="absolute h-full w-full object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-medium text-lg">ドン・ペリニヨン</h3>
+                  <p class="text-gray-600 text-sm">2012</p>
+                </div>
+                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">在庫あり</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-center text-sm">
+                  <span class="text-gray-600">タイプ:</span>
+                  <span class="ml-2">スパークリング</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">生産国:</span>
+                  <span class="ml-2">フランス</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">地域:</span>
+                  <span class="ml-2">シャンパーニュ</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="font-bold text-lg">¥28,000</span>
+                <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden" @click="selectedWine = 'wine4'">
+            <div class="relative pb-2/3 bg-gray-200">
+              <img src="https://via.placeholder.com/300x400" alt="カベルネ・ソーヴィニヨン 2020" class="absolute h-full w-full object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-medium text-lg">カベルネ・ソーヴィニヨン</h3>
+                  <p class="text-gray-600 text-sm">2020</p>
+                </div>
+                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">在庫あり</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-center text-sm">
+                  <span class="text-gray-600">タイプ:</span>
+                  <span class="ml-2">赤ワイン</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">生産国:</span>
+                  <span class="ml-2">アメリカ</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">地域:</span>
+                  <span class="ml-2">ナパ・ヴァレー</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="font-bold text-lg">¥12,000</span>
+                <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden" @click="selectedWine = 'wine5'">
+            <div class="relative pb-2/3 bg-gray-200">
+              <img src="https://via.placeholder.com/300x400" alt="ソーヴィニヨン・ブラン 2021" class="absolute h-full w-full object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-medium text-lg">ソーヴィニヨン・ブラン</h3>
+                  <p class="text-gray-600 text-sm">2021</p>
+                </div>
+                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">入荷待ち</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-center text-sm">
+                  <span class="text-gray-600">タイプ:</span>
+                  <span class="ml-2">白ワイン</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">生産国:</span>
+                  <span class="ml-2">ニュージーランド</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">地域:</span>
+                  <span class="ml-2">マールボロ</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="font-bold text-lg">¥5,800</span>
+                <button class="bg-yellow-600 text-white px-3 py-1 rounded text-sm">予約する</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden" @click="selectedWine = 'wine6'">
+            <div class="relative pb-2/3 bg-gray-200">
+              <img src="https://via.placeholder.com/300x400" alt="バローロ 2017" class="absolute h-full w-full object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-medium text-lg">バローロ</h3>
+                  <p class="text-gray-600 text-sm">2017</p>
+                </div>
+                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">在庫あり</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-center text-sm">
+                  <span class="text-gray-600">タイプ:</span>
+                  <span class="ml-2">赤ワイン</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">生産国:</span>
+                  <span class="ml-2">イタリア</span>
+                </div>
+                <div class="flex items-center text-sm mt-1">
+                  <span class="text-gray-600">地域:</span>
+                  <span class="ml-2">ピエモンテ</span>
+                </div>
+              </div>
+              <div class="mt-3 flex justify-between items-center">
+                <span class="font-bold text-lg">¥18,500</span>
+                <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="activeView === 'list'" class="bg-white rounded-lg shadow">
+          <table class="min-w-full">
+            <thead class="bg-gray-50 border-b">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">商品名</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ヴィンテージ</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">タイプ</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">生産国</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">地域</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">価格</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">在庫</th>
+                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr @click="selectedWine = 'wine1'" class="hover:bg-gray-50 cursor-pointer">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">シャトー・マルゴー</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2018</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">赤ワイン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">フランス</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ボルドー</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">¥75,000</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">在庫あり</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+                </td>
+              </tr>
+              <tr @click="selectedWine = 'wine2'" class="hover:bg-gray-50 cursor-pointer">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">シャブリ グランクリュ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2019</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">白ワイン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">フランス</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ブルゴーニュ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">¥15,000</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">在庫あり</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+                </td>
+              </tr>
+              <tr @click="selectedWine = 'wine3'" class="hover:bg-gray-50 cursor-pointer">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ドン・ペリニヨン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2012</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">スパークリング</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">フランス</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">シャンパーニュ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">¥28,000</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">在庫あり</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+                </td>
+              </tr>
+              <tr @click="selectedWine = 'wine4'" class="hover:bg-gray-50 cursor-pointer">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">カベルネ・ソーヴィニヨン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2020</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">赤ワイン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">アメリカ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ナパ・ヴァレー</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">¥12,000</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">在庫あり</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+                </td>
+              </tr>
+              <tr @click="selectedWine = 'wine5'" class="hover:bg-gray-50 cursor-pointer">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ソーヴィニヨン・ブラン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2021</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">白ワイン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ニュージーランド</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">マールボロ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">¥5,800</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">入荷待ち</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button class="bg-yellow-600 text-white px-3 py-1 rounded text-sm">予約する</button>
+                </td>
+              </tr>
+              <tr @click="selectedWine = 'wine6'" class="hover:bg-gray-50 cursor-pointer">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">バローロ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2017</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">赤ワイン</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">イタリア</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ピエモンテ</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">¥18,500</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">在庫あり</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">カートに追加</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-6 flex items-center justify-between bg-white px-4 py-3 sm:px-6 rounded-lg shadow">
+          <div class="flex-1 flex justify-between sm:hidden">
+            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">前へ</a>
+            <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">次へ</a>
+          </div>
+          <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div>
+              <p class="text-sm text-gray-700">
+                全<span class="font-medium">150</span>件中
+                <span class="font-medium">1</span>ページ目（
+                <span class="font-medium">1-6</span>件）を表示
+              </p>
+            </div>
+            <div>
+              <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                  <span class="sr-only">Previous</span>
+                  &lt;
+                </a>
+                <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                  1
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                  2
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                  3
+                </a>
+                <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                  ...
+                </span>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                  24
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                  25
+                </a>
+                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                  <span class="sr-only">Next</span>
+                  &gt;
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="selectedWine === 'wine1'" class="fixed inset-0 overflow-y-auto z-50" style="display: none;">
+          <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true" @click="selectedWine = null">
+              <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full">
+              <div class="bg-white p-6 sm:p-10">
+                <div class="flex justify-end">
+                  <button @click="selectedWine = null" class="text-gray-400 hover:text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
+                      <img src="https://via.placeholder.com/400x600" alt="シャトー・マルゴー 2018" class="object-contain h-full">
+                    </div>
+                    <div class="mt-4 flex justify-center gap-2">
+                      <button class="border-2 border-red-500 w-16 h-16 rounded-md overflow-hidden">
+                        <img src="https://via.placeholder.com/100" alt="ミニチュア1" class="w-full h-full object-cover">
+                      </button>
+                      <button class="border-2 border-gray-200 w-16 h-16 rounded-md overflow-hidden">
+                        <img src="https://via.placeholder.com/100" alt="ミニチュア2" class="w-full h-full object-cover">
+                      </button>
+                      <button class="border-2 border-gray-200 w-16 h-16 rounded-md overflow-hidden">
+                        <img src="https://via.placeholder.com/100" alt="ミニチュア3" class="w-full h-full object-cover">
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div class="flex justify-between items-start mb-4">
+                      <h2 class="text-2xl font-bold">シャトー・マルゴー</h2>
+                      <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">在庫あり</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-4">2018年 - フランス / ボルドー</p>
+                    <p class="text-3xl font-bold text-red-600 mb-6">¥75,000 <span class="text-sm text-gray-500 font-normal">（税込）</span></p>
+                    
+                    <div class="border-t border-b py-4 mb-6">
+                      <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p class="text-sm text-gray-500">タイプ</p>
+                          <p class="font-medium">赤ワイン</p>
+                        </div>
+                        <div>
+                          <p class="text-sm text-gray-500">ぶどう品種</p>
+                          <p class="font-medium">カベルネ・ソーヴィニヨン、メルロー</p>
+                        </div>
+                        <div>
+                          <p class="text-sm text-gray-500">アルコール度数</p>
+                          <p class="font-medium">13.5%</p>
+                        </div>
+                        <div>
+                          <p class="text-sm text-gray-500">容量</p>
+                          <p class="font-medium">750ml</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                      <h3 class="text-lg font-medium mb-2">商品説明</h3>
+                      <p class="text-gray-600">
+                        シャトー・マルゴーは、フランスのボルドー地方メドック地区マルゴー村にある、格付け第一級のシャトーです。2018年のヴィンテージは、エレガントさとパワーを兼ね備えた素晴らしい品質で、長期熟成のポテンシャルがあります。<br><br>
+                        ブラックベリー、カシス、スミレの花の豊かなアロマに、スパイスやバニラのニュアンスが加わります。口当たりは滑らかで、タンニンは非常に洗練されており、長い余韻が続きます。
+                      </p>
+                    </div>
+                    
+                    <div class="flex gap-3 mb-6">
+                      <div class="w-24">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">数量</label>
+                        <input type="number" min="1" value="1" class="w-full border rounded-md px-3 py-2">
+                      </div>
+                      <div class="flex-1 self-end">
+                        <button class="w-full bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">カートに追加</button>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 text-sm text-gray-500">
+                      <button class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        お気に入りに追加
+                      </button>
+                      <button class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        データシートをダウンロード
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mt-12">
+                  <h3 class="text-lg font-medium mb-4">おすすめ商品</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="border rounded-lg p-3">
+                      <img src="https://via.placeholder.com/150" alt="シャトー・ラフィット" class="w-full h-32 object-cover rounded-md">
+                      <h4 class="font-medium mt-2">シャトー・ラフィット</h4>
+                      <p class="text-sm text-gray-500">2018 - 赤ワイン</p>
+                      <p class="font-bold mt-1">¥85,000</p>
+                    </div>
+                    <div class="border rounded-lg p-3">
+                      <img src="https://via.placeholder.com/150" alt="シャトー・ムートン" class="w-full h-32 object-cover rounded-md">
+                      <h4 class="font-medium mt-2">シャトー・ムートン</h4>
+                      <p class="text-sm text-gray-500">2018 - 赤ワイン</p>
+                      <p class="font-bold mt-1">¥80,000</p>
+                    </div>
+                    <div class="border rounded-lg p-3">
+                      <img src="https://via.placeholder.com/150" alt="シャトー・ラトゥール" class="w-full h-32 object-cover rounded-md">
+                      <h4 class="font-medium mt-2">シャトー・ラトゥール</h4>
+                      <p class="text-sm text-gray-500">2018 - 赤ワイン</p>
+                      <p class="font-bold mt-1">¥78,000</p>
+                    </div>
+                    <div class="border rounded-lg p-3">
+                      <img src="https://via.placeholder.com/150" alt="シャトー・オー・ブリオン" class="w-full h-32 object-cover rounded-md">
+                      <h4 class="font-medium mt-2">シャトー・オー・ブリオン</h4>
+                      <p class="text-sm text-gray-500">2018 - 赤ワイン</p>
+                      <p class="font-bold mt-1">¥72,000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      const currentPage = window.location.pathname.split('/').pop();
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

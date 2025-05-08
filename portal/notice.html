@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ | ワイサポ顧客ポータル</title>
+  <meta data-page-title="お知らせ" content="お知らせ">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+  
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="px-4 py-3 text-sm border-b border-red-900">
+        <div class="font-medium">株式会社山田商事</div>
+        <div>山田一郎 様</div>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            ダッシュボード
+          </a>
+          <a href="order.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            注文入力
+          </a>
+          <a href="history.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            注文履歴
+          </a>
+          <a href="delivery.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品確認
+          </a>
+          <a href="cellar.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            マイセラー在庫確認
+          </a>
+          <a href="usage.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            使用実績登録
+          </a>
+          <a href="catalog.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            ワイン検索
+          </a>
+          <a href="notice.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            お知らせ
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ワイサポ顧客ポータル v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">お知らせ</div>
+        </div>
+        <div class="header-actions">
+          <div class="relative mr-4">
+            <button class="notification-badge bg-gray-200 rounded-full p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span class="notification-indicator">3</span>
+            </button>
+          </div>
+          <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">ログアウト</button>
+        </div>
+      </header>
+
+      <main class="content" x-data="{ activeTab: 'all', selectedNotice: null, isDetailOpen: false }">
+        <div class="border-b border-gray-200 mb-6">
+          <nav class="-mb-px flex space-x-8">
+            <button @click="activeTab = 'all'" :class="activeTab === 'all' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+              すべて
+            </button>
+            <button @click="activeTab = 'system'" :class="activeTab === 'system' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+              システム
+            </button>
+            <button @click="activeTab = 'product'" :class="activeTab === 'product' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+              商品情報
+            </button>
+            <button @click="activeTab = 'campaign'" :class="activeTab === 'campaign' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+              キャンペーン
+            </button>
+          </nav>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow mb-6">
+          <div class="flex flex-wrap gap-4">
+            <div class="w-64">
+              <label class="block text-sm text-gray-600 mb-1">キーワード</label>
+              <input type="text" class="w-full border rounded px-3 py-2" placeholder="キーワードを入力">
+            </div>
+            <div class="w-64">
+              <label class="block text-sm text-gray-600 mb-1">日付</label>
+              <div class="flex gap-2">
+                <input type="date" class="w-full border rounded px-3 py-2">
+                <span class="self-center">〜</span>
+                <input type="date" class="w-full border rounded px-3 py-2">
+              </div>
+            </div>
+            <div class="self-end">
+              <button class="bg-red-600 text-white px-4 py-2 rounded">検索</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow overflow-hidden mb-6">
+          <div class="p-0">
+            <div class="divide-y divide-gray-200">
+              <div class="p-4 hover:bg-gray-50 cursor-pointer" @click="isDetailOpen = true; selectedNotice = {
+                id: 1,
+                title: '2024年新着ワインのご案内',
+                date: '2024/04/20',
+                category: 'product',
+                categoryName: '商品情報',
+                content: '今年の新着ワインが入荷しました。<br><br>当社では、フランス・ボルドー地方の優良な生産者から直接買い付けた2020年ヴィンテージをはじめ、各国の厳選されたワインを取り揃えております。<br><br>特に今年は、例年以上に高品質なヴィンテージとして注目されている2020年ボルドーワインの入荷が完了いたしました。既に世界的に高い評価を受けているこのヴィンテージは、保管状態が良好であれば長期熟成も期待できる逸品です。<br><br>また、期間限定で新着ワインのお試しセット（赤・白・スパークリング各2本ずつ）をご用意しております。サンプルとしてご活用いただければ幸いです。<br><br>詳細は営業担当までお問い合わせください。',
+                image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+              }">
+                <div class="flex justify-between mb-1">
+                  <div class="flex items-center">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 mr-2">商品情報</span>
+                    <span class="font-medium">2024年新着ワインのご案内</span>
+                  </div>
+                  <span class="text-sm text-gray-500">2024/04/20</span>
+                </div>
+                <p class="text-sm text-gray-600 line-clamp-2">今年の新着ワインが入荷しました。期間限定でお試しセットをご用意しています。</p>
+              </div>
+              
+              <div class="p-4 hover:bg-gray-50 cursor-pointer" @click="isDetailOpen = true; selectedNotice = {
+                id: 2,
+                title: 'ゴールデンウィーク休業のお知らせ',
+                date: '2024/04/15',
+                category: 'system',
+                categoryName: 'システム',
+                content: '平素は格別のご高配を賜り、厚く御礼申し上げます。<br><br>誠に勝手ながら、弊社では下記の期間を休業とさせていただきます。<br><br>【休業期間】<br>2024年5月3日(金)～5月6日(月)<br><br>休業期間中にいただいたお問い合わせやご注文につきましては、5月7日(火)以降に順次対応させていただきます。<br><br>また、5月2日(木)午後3時以降のご注文は、連休明け以降の出荷となりますので、あらかじめご了承ください。<br><br>お客様にはご不便をおかけいたしますが、何卒ご理解賜りますようお願い申し上げます。',
+                image: null
+              }">
+                <div class="flex justify-between mb-1">
+                  <div class="flex items-center">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 mr-2">システム</span>
+                    <span class="font-medium">ゴールデンウィーク休業のお知らせ</span>
+                  </div>
+                  <span class="text-sm text-gray-500">2024/04/15</span>
+                </div>
+                <p class="text-sm text-gray-600 line-clamp-2">2024年5月3日(金)～5月6日(月)は休業とさせていただきます。</p>
+              </div>
+              
+              <div class="p-4 hover:bg-gray-50 cursor-pointer" @click="isDetailOpen = true; selectedNotice = {
+                id: 3,
+                title: 'マイセラー機能が新しくなりました',
+                date: '2024/04/01',
+                category: 'system',
+                categoryName: 'システム',
+                content: 'この度、マイセラー機能をリニューアルし、より使いやすくなりました。<br><br>主な変更点は以下の通りです。<br><br>【変更点】<br>・マイセラー在庫の一覧表示をより見やすく変更<br>・使用実績登録画面のインターフェース改善<br>・複数納品先のマイセラー在庫を一覧で確認可能に<br>・入出庫履歴の詳細表示機能の追加<br>・在庫アラート機能の追加（在庫低下時に自動通知）<br><br>より直感的な操作が可能になり、マイセラーの管理がしやすくなりました。<br><br>新機能についてご不明な点がございましたら、お気軽に担当営業までお問い合わせください。',
+                image: null
+              }">
+                <div class="flex justify-between mb-1">
+                  <div class="flex items-center">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 mr-2">システム</span>
+                    <span class="font-medium">マイセラー機能が新しくなりました</span>
+                  </div>
+                  <span class="text-sm text-gray-500">2024/04/01</span>
+                </div>
+                <p class="text-sm text-gray-600 line-clamp-2">マイセラー在庫管理機能が使いやすくなりました。詳細はこちらからご確認ください。</p>
+              </div>
+              
+              <div class="p-4 hover:bg-gray-50 cursor-pointer" @click="isDetailOpen = true; selectedNotice = {
+                id: 4,
+                title: 'サマーワインフェア開催のお知らせ',
+                date: '2024/03/25',
+                category: 'campaign',
+                categoryName: 'キャンペーン',
+                content: '初夏の訪れを感じるこの季節に、サマーワインフェアを開催いたします。<br><br>【開催期間】<br>2024年6月1日(土)～6月30日(日)<br><br>【特典内容】<br>・対象ワイン10%オフ<br>・6本以上購入で15%オフ<br>・12本以上購入で20%オフ<br>・特別限定ワイン販売（数量限定）<br><br>この機会に、夏に最適な爽やかな白ワインや軽やかな赤ワインをお求めください。<br><br>また、6月15日(土)には東京本社にて試飲会を開催予定です。詳細は追ってご案内いたします。<br><br>ご不明な点は担当営業までお問い合わせください。',
+                image: 'https://images.unsplash.com/photo-1566913485242-694e995819d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+              }">
+                <div class="flex justify-between mb-1">
+                  <div class="flex items-center">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800 mr-2">キャンペーン</span>
+                    <span class="font-medium">サマーワインフェア開催のお知らせ</span>
+                  </div>
+                  <span class="text-sm text-gray-500">2024/03/25</span>
+                </div>
+                <p class="text-sm text-gray-600 line-clamp-2">2024年6月1日(土)～6月30日(日)の期間、サマーワインフェアを開催します。対象ワインが最大20%オフになるキャンペーンです。</p>
+              </div>
+              
+              <div class="p-4 hover:bg-gray-50 cursor-pointer" @click="isDetailOpen = true; selectedNotice = {
+                id: 5,
+                title: '新規取扱ワイナリーのご紹介',
+                date: '2024/03/15',
+                category: 'product',
+                categoryName: '商品情報',
+                content: '新たに取引を開始したワイナリーのワインを取り扱いますので、ご紹介いたします。<br><br>【新規取扱ワイナリー】<br>・シャトー・ラ・フルール（フランス・ボルドー地方）<br>・ドメーヌ・ベルナール（フランス・ブルゴーニュ地方）<br>・カンティーナ・ロッソ（イタリア・トスカーナ州）<br>・ボデガス・アルト（スペイン・リオハ地方）<br>・サザンクロス・ヴィンヤーズ（オーストラリア・ヤラヴァレー）<br><br>いずれも各地域で高い評価を受けている生産者です。品質の高さはもちろん、環境に配慮した持続可能な農法を実践しているワイナリーばかりです。<br><br>商品詳細はワイン検索画面からご確認いただけます。<br><br>また、サンプルのご用意もありますので、ご希望の際は担当営業までお問い合わせください。',
+                image: 'https://images.unsplash.com/photo-1507934683566-8ec740e43ee3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+              }">
+                <div class="flex justify-between mb-1">
+                  <div class="flex items-center">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 mr-2">商品情報</span>
+                    <span class="font-medium">新規取扱ワイナリーのご紹介</span>
+                  </div>
+                  <span class="text-sm text-gray-500">2024/03/15</span>
+                </div>
+                <p class="text-sm text-gray-600 line-clamp-2">新たに取引を開始した5つのワイナリーのワインを取り扱います。各地域で高い評価を受けている生産者です。</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+            <div class="flex-1 flex justify-between sm:hidden">
+              <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">前へ</a>
+              <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">次へ</a>
+            </div>
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+              <div>
+                <p class="text-sm text-gray-700">
+                  <span class="font-medium">1</span>
+                  ページ
+                  <span class="font-medium">5</span>
+                  件表示（全
+                  <span class="font-medium">18</span>
+                  件）
+                </p>
+              </div>
+              <div>
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                  <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <span class="sr-only">Previous</span>
+                    &lt;
+                  </a>
+                  <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    1
+                  </a>
+                  <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    2
+                  </a>
+                  <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                    3
+                  </a>
+                  <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                    4
+                  </a>
+                  <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <span class="sr-only">Next</span>
+                    &gt;
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="isDetailOpen" class="fixed inset-0 overflow-y-auto z-50 flex items-center justify-center" style="display: none;">
+          <div class="fixed inset-0 transition-opacity">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+          
+          <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all w-full max-w-4xl">
+            <div class="bg-gray-50 px-4 py-3 border-b flex justify-between items-center">
+              <template x-if="selectedNotice">
+                <h3 class="text-lg font-medium text-gray-900" x-text="selectedNotice.title"></h3>
+              </template>
+              <button @click="isDetailOpen = false" class="text-gray-400 hover:text-gray-500">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div class="p-6 max-h-[70vh] overflow-y-auto">
+              <template x-if="selectedNotice">
+                <div>
+                  <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center">
+                      <span x-show="selectedNotice.category === 'system'" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 mr-2">システム</span>
+                      <span x-show="selectedNotice.category === 'product'" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 mr-2">商品情報</span>
+                      <span x-show="selectedNotice.category === 'campaign'" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800 mr-2">キャンペーン</span>
+                      <span class="text-sm text-gray-500" x-text="selectedNotice.date"></span>
+                    </div>
+                  </div>
+                  
+                  <template x-if="selectedNotice.image">
+                    <div class="mb-4">
+                      <img :src="selectedNotice.image" class="w-full h-auto rounded" :alt="selectedNotice.title">
+                    </div>
+                  </template>
+                  
+                  <div class="prose max-w-none" x-html="selectedNotice.content"></div>
+                </div>
+              </template>
+            </div>
+            
+            <div class="bg-gray-50 px-4 py-3 border-t flex justify-end">
+              <button @click="isDetailOpen = false" class="px-4 py-2 bg-red-600 text-white rounded shadow-sm hover:bg-red-700">
+                閉じる
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      const currentPage = window.location.pathname.split('/').pop();
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

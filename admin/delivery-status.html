@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>納品状況確認 | ワイサポ販売管理システム</title>
+    <meta data-page-title="納品状況確認" content="納品状況確認">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <div class="side-nav">
+            <div class="side-nav-logo">
+                <a href="../index.html" class="text-white">ワイサポ</a>
+            </div>
+            <div class="side-nav-content">
+                <nav class="mt-4">
+                    <a href="index.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        受注管理
+                    </a>
+                    <a href="customer-list.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        顧客管理
+                    </a>
+                    <a href="inventory.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                        在庫管理
+                    </a>
+                    <a href="activity-list.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        活動管理
+                    </a>
+                    <a href="discount-rules.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                        </svg>
+                        取引調整
+                    </a>
+                    <a href="invoice-list.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        請求回収管理
+                    </a>
+                    <a href="delivery-status.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        納品状況確認
+                    </a>
+                    <a href="dashboard.html" class="side-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        ダッシュボード
+                    </a>
+                </nav>
+            </div>
+            <div class="side-nav-footer">
+                <div class="text-xs">
+                    <div>ユーザー：<span class="font-medium">田中太郎</span></div>
+                    <div>ワイサポ販売管理システム v1.0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="flex items-center">
+                    <button class="mobile-nav-button mr-4 lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <div class="header-title">納品状況確認</div> <span class="ml-3 px-2 bg-red-100 text-red-800 text-xs rounded-full">社内管理画面</span>
+                </div>
+                <div class="header-actions">
+                    <span class="mr-4 hidden md:inline-block">田中太郎</span>
+                    <button class="notification-badge bg-gray-200 rounded-full p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                        <span class="notification-indicator">3</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="content">
+                <div class="bg-white rounded-t-lg shadow flex border-b" x-data="{ viewType: 'pending' }">
+                  <button
+                    @click="viewType = 'pending'"
+                    :class="viewType === 'pending' ? 'bg-red-50 text-red-700 border-b-2 border-red-600' : 'hover:bg-gray-50'"
+                    class="flex-1 py-3 font-medium text-center">
+                    納品確認待ち
+                  </button>
+                  <button
+                    @click="viewType = 'mismatch'"
+                    :class="viewType === 'mismatch' ? 'bg-red-50 text-red-700 border-b-2 border-red-600' : 'hover:bg-gray-50'"
+                    class="flex-1 py-3 font-medium text-center">
+                    不一致報告対応
+                  </button>
+                  <button
+                    @click="viewType = 'history'"
+                    :class="viewType === 'history' ? 'bg-red-50 text-red-700 border-b-2 border-red-600' : 'hover:bg-gray-50'"
+                    class="flex-1 py-3 font-medium text-center">
+                    納品履歴
+                  </button>
+                </div>
+
+                <div class="bg-white p-4 shadow mb-6" x-data="{ advancedFilter: false }">
+                  <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-medium">検索・絞り込み</h2>
+                    <button @click="advancedFilter = !advancedFilter" class="text-red-600 text-sm">
+                      詳細検索 <span x-text="advancedFilter ? '▲' : '▼'"></span>
+                    </button>
+                  </div>
+
+                  <div class="flex flex-wrap gap-4">
+                    <div class="w-64">
+                      <label class="block text-sm text-gray-600 mb-1">顧客名</label>
+                      <input type="text" class="w-full border rounded px-3 py-2" placeholder="顧客名を入力">
+                    </div>
+                    <div class="w-64">
+                      <label class="block text-sm text-gray-600 mb-1">納品先</label>
+                      <input type="text" class="w-full border rounded px-3 py-2" placeholder="納品先を入力">
+                    </div>
+                    <div class="w-64">
+                      <label class="block text-sm text-gray-600 mb-1">出荷日</label>
+                      <div class="flex gap-2">
+                        <input type="date" class="w-full border rounded px-3 py-2">
+                        <span class="self-center">〜</span>
+                        <input type="date" class="w-full border rounded px-3 py-2">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div x-show="advancedFilter" class="mt-4 border-t pt-4">
+                    <div class="flex flex-wrap gap-4">
+                      <div class="w-64">
+                        <label class="block text-sm text-gray-600 mb-1">受注番号</label>
+                        <input type="text" class="w-full border rounded px-3 py-2" placeholder="受注番号を入力">
+                      </div>
+                      <div class="w-64">
+                        <label class="block text-sm text-gray-600 mb-1">販売区分</label>
+                        <select class="w-full border rounded px-3 py-2">
+                          <option>すべて</option>
+                          <option>通常</option>
+                          <option>マイセラー</option>
+                        </select>
+                      </div>
+                      <div class="w-64">
+                        <label class="block text-sm text-gray-600 mb-1">担当者</label>
+                        <select class="w-full border rounded px-3 py-2">
+                          <option>すべて</option>
+                          <option>自分のみ</option>
+                          <option>田中太郎</option>
+                          <option>鈴木一郎</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 flex justify-end gap-3">
+                    <button class="bg-gray-200 px-4 py-2 rounded">リセット</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded">検索</button>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded shadow overflow-hidden" x-show="viewType === 'pending'">
+                  <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                          現在 <span class="font-medium">7件</span> の納品が顧客の確認待ちです。3日以上経過している納品は <span class="font-medium">2件</span> あります。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">受注番号</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">出荷日</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">顧客名</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">納品先</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">商品数</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">販売区分</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">経過日数</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">担当者</th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                      <tr class="bg-red-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024025</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/29</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社山田商事</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">東京本社</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">マイセラー</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">3日</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">田中太郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs mr-1">リマインド</button>
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900 ml-1">詳細</a>
+                        </td>
+                      </tr>
+                      <tr class="bg-red-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024024</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/29</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">有限会社佐藤工業</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">大阪工場</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">通常</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium">3日</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">鈴木一郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs mr-1">リマインド</button>
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900 ml-1">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024026</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/30</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社中村電機</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">福岡営業所</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">マイセラー</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2日</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">田中太郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs mr-1">リマインド</button>
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900 ml-1">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024027</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/05/01</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社高橋産業</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">名古屋支店</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">通常</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1日</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">鈴木一郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs mr-1">リマインド</button>
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900 ml-1">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024028</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/05/01</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社伊藤商店</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">札幌支店</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">マイセラー</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1日</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">田中太郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs mr-1">リマインド</button>
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900 ml-1">詳細</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                    <div class="flex-1 flex justify-between sm:hidden">
+                      <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">前へ</a>
+                      <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">次へ</a>
+                    </div>
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          <span class="font-medium">1</span>
+                          ページ
+                          <span class="font-medium">10</span>
+                          件表示（全
+                          <span class="font-medium">7</span>
+                          件）
+                        </p>
+                      </div>
+                      <div>
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                          <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            &lt;
+                          </a>
+                          <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            1
+                          </a>
+                          <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            &gt;
+                          </a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded shadow overflow-hidden" x-show="viewType === 'mismatch'">
+                  <div class="p-4 bg-red-50 border-l-4 border-red-400">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <p class="text-sm text-red-700">
+                          未対応の納品不一致報告が <span class="font-medium">3件</span> あります。可能な限り早急に対応してください。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">受注番号</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">報告日</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">顧客名</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">納品先</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">不一致内容</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">対応状況</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">担当者</th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                      <tr class="bg-red-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024022</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/28</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社山田商事</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">東京本社</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">数量不足</span>
+                          <div class="text-xs mt-1">シャトー・マルゴー2020が1本不足</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">未対応</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">田中太郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-issue.html" class="text-red-600 hover:text-red-900">対応</a>
+                        </td>
+                      </tr>
+                      <tr class="bg-red-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024023</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/29</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">有限会社佐藤工業</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">大阪工場</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">商品破損</span>
+                          <div class="text-xs mt-1">ボルドーアソート6本セットの内1本破損</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">未対応</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">鈴木一郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-issue.html" class="text-red-600 hover:text-red-900">対応</a>
+                        </td>
+                      </tr>
+                      <tr class="bg-red-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024020</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/26</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社中村電機</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">福岡営業所</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">商品違い</span>
+                          <div class="text-xs mt-1">シャトー・ラトゥール2018が注文と異なる</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">確認中</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">田中太郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-issue.html" class="text-red-600 hover:text-red-900">続行</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024019</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/25</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社高橋産業</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">名古屋支店</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">数量不足</span>
+                          <div class="text-xs mt-1">ブルゴーニュ赤ワイン3本セットが1セット不足</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">再送手配済</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">鈴木一郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-issue.html" class="text-red-600 hover:text-red-900">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024018</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/24</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社渡辺物産</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">広島支店</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">商品破損</span>
+                          <div class="text-xs mt-1">シャンパン2本が破損</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">完了</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">田中太郎</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-issue.html" class="text-red-600 hover:text-red-900">詳細</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                    <div class="flex-1 flex justify-between sm:hidden">
+                      <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">前へ</a>
+                      <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">次へ</a>
+                    </div>
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          <span class="font-medium">1</span>
+                          ページ
+                          <span class="font-medium">10</span>
+                          件表示（全
+                          <span class="font-medium">5</span>
+                          件）
+                        </p>
+                      </div>
+                      <div>
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                          <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            &lt;
+                          </a>
+                          <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            1
+                          </a>
+                          <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            &gt;
+                          </a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded shadow overflow-hidden" x-show="viewType === 'history'">
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">受注番号</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">出荷日</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">納品確認日</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">顧客名</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">納品先</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">商品数</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">販売区分</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ステータス</th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024018</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/23</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/24</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社渡辺物産</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">広島支店</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">通常</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">不一致報告あり</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024017</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/22</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/23</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社山田商事</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">東京本社</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">マイセラー</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">一致確認済</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024016</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/22</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/23</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">株式会社中村電機</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">福岡営業所</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">通常</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">一致確認済</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900">詳細</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-medium"><a href="order-detail.html">O-2024015</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/20</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024/04/21</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">有限会社佐藤工業</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">大阪工場</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">マイセラー</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">一致確認済</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="delivery-detail.html" class="text-red-600 hover:text-red-900">詳細</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                    <div class="flex-1 flex justify-between sm:hidden">
+                      <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">前へ</a>
+                      <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">次へ</a>
+                    </div>
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          <span class="font-medium">1</span>
+                          ページ
+                          <span class="font-medium">10</span>
+                          件表示（全
+                          <span class="font-medium">25</span>
+                          件）
+                        </p>
+                      </div>
+                      <div>
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                          <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            &lt;
+                          </a>
+                          <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            1
+                          </a>
+                          <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            2
+                          </a>
+                          <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+                            3
+                          </a>
+                          <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            &gt;
+                          </a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.side-nav-item');
+            // 現在のファイル名に基づいてアクティブなリンクを設定
+            // 相対パス '../' を除いたファイル名で比較するように調整
+            const currentPagePath = window.location.pathname;
+            const currentPageFile = currentPagePath.substring(currentPagePath.lastIndexOf('/') + 1);
+
+            navLinks.forEach(link => {
+                const hrefAttribute = link.getAttribute('href');
+                // href属性からファイル名のみを抽出（例：../delivery-status.html -> delivery-status.html）
+                const linkFile = hrefAttribute.substring(hrefAttribute.lastIndexOf('/') + 1);
+                
+                if (linkFile === currentPageFile) {
+                    link.classList.add('active');
+                    link.classList.add('bg-red-900'); // 標準仕様でアクティブ時のスタイルがmain.cssで定義されていれば不要な場合もある
+                }
+            });
+        });
+    </script>
+</body>
+</html>

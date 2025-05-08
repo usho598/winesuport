@@ -1,0 +1,562 @@
+/* ワイサポ販売管理システム スタイルシート */
+
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap';
+
+/* カスタムプロパティの定義 */
+:root {
+  --primary-color: #9f1239; /* red-800 */
+  --primary-dark: #7f1d1d; /* red-900 */
+  --primary-light: #e11d48; /* rose-600 */
+  --secondary-color: #0f766e; /* teal-700 */
+  --accent-color: #fbbf24; /* amber-400 */
+  --text-dark: #1f2937; /* gray-800 */
+  --text-light: #f9fafb; /* gray-50 */
+  --success: #22c55e; /* green-500 */
+  --warning: #f59e0b; /* amber-500 */
+  --danger: #ef4444; /* red-500 */
+  --info: #3b82f6; /* blue-500 */
+}
+
+/* 全体の設定 */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text-dark);
+}
+
+/* サイドナビゲーション用スタイル */
+.side-nav {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  width: 16rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 30;
+  transition: transform 0.3s ease;
+}
+
+.side-nav-logo {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-nav-content {
+  overflow-y: auto;
+  height: calc(100vh - 4rem);
+}
+
+.side-nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.side-nav a.active {
+  background-color: var(--primary-dark);
+  border-left: 4px solid var(--accent-color);
+}
+
+.side-nav a:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-nav-footer {
+  padding: 1rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* メインコンテンツエリア */
+.main-content {
+  margin-left: 16rem;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* gray-100 */
+  transition: margin-left 0.3s ease;
+}
+
+/* ヘッダーのスタイル */
+.header {
+  height: 4rem;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* コンテンツエリア */
+.content {
+  padding: 1.5rem;
+}
+
+/* ボタンスタイル */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-icon {
+  margin-right: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  background-color: #0c5954; /* teal-800 */
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: var(--text-light);
+}
+
+.btn-success:hover {
+  background-color: #16a34a; /* green-600 */
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  color: var(--text-dark);
+}
+
+.btn-warning:hover {
+  background-color: #d97706; /* amber-600 */
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: var(--text-light);
+}
+
+.btn-danger:hover {
+  background-color: #dc2626; /* red-600 */
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.btn-ghost:hover {
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+/* ステータスバッジ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 9999px;
+}
+
+.badge-success {
+  background-color: #dcfce7; /* green-100 */
+  color: #166534; /* green-800 */
+}
+
+.badge-warning {
+  background-color: #fef3c7; /* amber-100 */
+  color: #92400e; /* amber-800 */
+}
+
+.badge-danger {
+  background-color: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+}
+
+.badge-info {
+  background-color: #dbeafe; /* blue-100 */
+  color: #1e40af; /* blue-800 */
+}
+
+/* カード・パネルスタイル */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* テーブルスタイル */
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #f9fafb; /* gray-50 */
+  font-weight: 500;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: #4b5563; /* gray-600 */
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.table tr:hover {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+.table-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.table-link:hover {
+  text-decoration: underline;
+}
+
+/* フォーム要素 */
+.form-control {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(159, 18, 57, 0.1); /* red-800 with opacity */
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563; /* gray-600 */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* フィルターエリア */
+.filter-area {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.filter-area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-area-title {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.filter-area-toggle {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.filter-area-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.filter-area-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+}
+
+/* アクションエリア */
+.action-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: #6b7280; /* gray-500 */
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pagination-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  background-color: white;
+  color: #4b5563; /* gray-600 */
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #fee2e2; /* red-100 */
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.pagination-button:hover:not(.active) {
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+.pagination-button:first-child {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.pagination-button:last-child {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+/* ダッシュボード専用のスタイル */
+.stat-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--primary-color);
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  margin-right: 1rem;
+}
+
+.stat-icon.primary {
+  background-color: #fee2e2; /* red-100 */
+  color: var(--primary-color);
+}
+
+.stat-icon.success {
+  background-color: #dcfce7; /* green-100 */
+  color: var(--success);
+}
+
+.stat-icon.warning {
+  background-color: #fef3c7; /* amber-100 */
+  color: var(--warning);
+}
+
+.stat-icon.info {
+  background-color: #dbeafe; /* blue-100 */
+  color: var(--info);
+}
+
+.stat-data {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280; /* gray-500 */
+}
+
+/* グリッドレイアウト */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* 通知アイコン */
+.notification-badge {
+  position: relative;
+}
+
+.notification-indicator {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--danger);
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* モバイル対応 */
+.mobile-nav-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    transform: translateX(-100%);
+  }
+  
+  .side-nav.mobile-nav-open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .mobile-nav-button {
+    display: block;
+  }
+  
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
