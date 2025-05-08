@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用実績確認 | ワイサポ販売管理システム</title>
+  <meta data-page-title="使用実績確認" content="使用実績確認">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドナビゲーション -->
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            受注管理
+          </a>
+          <a href="customer-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            顧客管理
+          </a>
+          <a href="inventory.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+            </svg>
+            在庫管理
+          </a>
+          <a href="activity-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            活動管理
+          </a>
+          <a href="discount-rules.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+            取引調整
+          </a>
+          <a href="invoice-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            請求回収管理
+          </a>
+          <a href="delivery-status.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品状況確認
+          </a>
+          <a href="dashboard.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            ダッシュボード
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ユーザー：<span class="font-medium">田中太郎</span></div>
+          <div>ワイサポ販売管理システム v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <!-- ヘッダー -->
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">使用実績確認</div>
+          <span class="ml-3 px-2 bg-red-100 text-red-800 text-xs rounded-full">社内管理画面</span>
+        </div>
+        <div class="header-actions">
+          <span class="mr-4 hidden md:inline-block">田中太郎</span>
+          <button class="notification-badge bg-gray-200 rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <span class="notification-indicator">3</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- コンテンツエリア -->
+      <main class="content">
+        <!-- 検索フィルター部分 -->
+        <div class="filter-area" x-data="{ advancedFilter: false }">
+          <div class="filter-area-header">
+            <h2 class="filter-area-title">検索・絞り込み</h2>
+            <button @click="advancedFilter = !advancedFilter" class="filter-area-toggle">
+              詳細検索 <span x-text="advancedFilter ? '▲' : '▼'"></span>
+            </button>
+          </div>
+          
+          <div class="filter-area-content">
+            <div class="form-group">
+              <label class="form-label">顧客名</label>
+              <input type="text" class="form-control" placeholder="顧客名を入力">
+            </div>
+            <div class="form-group">
+              <label class="form-label">登録期間</label>
+              <div class="flex items-center space-x-2">
+                <input type="date" class="form-control">
+                <span>〜</span>
+                <input type="date" class="form-control">
+              </div>
+            </div>
+          </div>
+          
+          <!-- 詳細検索部分（トグル表示） -->
+          <div x-show="advancedFilter" class="mt-4 border-t pt-4">
+            <div class="filter-area-content">
+              <div class="form-group">
+                <label class="form-label">納品先</label>
+                <select class="form-control">
+                  <option>すべて</option>
+                  <option>本社</option>
+                  <option>支店</option>
+                  <option>工場</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">商品名</label>
+                <input type="text" class="form-control" placeholder="商品名を入力">
+              </div>
+              <div class="form-group">
+                <label class="form-label">請求ステータス</label>
+                <select class="form-control">
+                  <option>すべて</option>
+                  <option>未請求</option>
+                  <option>請求済</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-area-actions">
+            <button class="btn btn-ghost">リセット</button>
+            <button class="btn btn-primary">検索</button>
+          </div>
+        </div>
+
+        <!-- 一括アクションボタンエリア -->
+        <div class="action-area">
+          <div>
+            <button class="btn btn-danger" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              棄却
+            </button>
+          </div>
+          <div>
+            <button class="btn btn-primary" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              承認・請求連携
+            </button>
+          </div>
+        </div>
+
+        <!-- タブ切り替え -->
+        <div class="card mb-6" x-data="{ activeTab: 'pending' }">
+          <div class="border-b border-gray-200">
+            <nav class="-mb-px flex space-x-8">
+              <a href="#" @click.prevent="activeTab = 'pending'" :class="activeTab === 'pending' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+                未請求分 <span class="bg-red-100 text-red-800 text-xs font-semibold ml-2 px-2.5 py-0.5 rounded">28</span>
+              </a>
+              <a href="#" @click.prevent="activeTab = 'billed'" :class="activeTab === 'billed' ? 'border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600' : 'border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+                請求済
+              </a>
+            </nav>
+          </div>
+
+          <!-- 使用実績一覧テーブル - 未請求分 -->
+          <div x-show="activeTab === 'pending'" class="card-body p-0">
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out">
+                    </th>
+                    <th>登録日</th>
+                    <th>顧客名</th>
+                    <th>納品先</th>
+                    <th>商品名</th>
+                    <th>数量</th>
+                    <th>金額</th>
+                    <th>登録者</th>
+                    <th class="text-center">承認</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 使用実績データ行 -->
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out">
+                    </td>
+                    <td>2024/04/28</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社山田商事</a>
+                    </td>
+                    <td>東京本社</td>
+                    <td>シャトー・マルゴー 2018</td>
+                    <td>2</td>
+                    <td>¥110,000</td>
+                    <td>山田一郎</td>
+                    <td class="text-center">
+                      <div class="flex justify-center space-x-2">
+                        <button class="p-1 rounded-full text-green-600 hover:bg-green-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </button>
+                        <button class="p-1 rounded-full text-red-600 hover:bg-red-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out">
+                    </td>
+                    <td>2024/04/26</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社山田商事</a>
+                    </td>
+                    <td>東京本社</td>
+                    <td>シャブリ グラン・クリュ 2019</td>
+                    <td>1</td>
+                    <td>¥25,000</td>
+                    <td>山田一郎</td>
+                    <td class="text-center">
+                      <div class="flex justify-center space-x-2">
+                        <button class="p-1 rounded-full text-green-600 hover:bg-green-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </button>
+                        <button class="p-1 rounded-full text-red-600 hover:bg-red-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out">
+                    </td>
+                    <td>2024/04/25</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">有限会社佐藤工業</a>
+                    </td>
+                    <td>大阪本社</td>
+                    <td>バローロ・リゼルヴァ 2017</td>
+                    <td>2</td>
+                    <td>¥60,000</td>
+                    <td>佐藤次郎</td>
+                    <td class="text-center">
+                      <div class="flex justify-center space-x-2">
+                        <button class="p-1 rounded-full text-green-600 hover:bg-green-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </button>
+                        <button class="p-1 rounded-full text-red-600 hover:bg-red-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out">
+                    </td>
+                    <td>2024/04/22</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社中村電機</a>
+                    </td>
+                    <td>福岡支店</td>
+                    <td>モエ・エ・シャンドン ブリュット</td>
+                    <td>3</td>
+                    <td>¥45,000</td>
+                    <td>中村三郎</td>
+                    <td class="text-center">
+                      <div class="flex justify-center space-x-2">
+                        <button class="p-1 rounded-full text-green-600 hover:bg-green-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </button>
+                        <button class="p-1 rounded-full text-red-600 hover:bg-red-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out">
+                    </td>
+                    <td>2024/04/20</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社山田商事</a>
+                    </td>
+                    <td>レストラン「フレンチ山田」</td>
+                    <td>ソーヴィニヨン・ブラン 2021 外2点</td>
+                    <td>4</td>
+                    <td>¥80,000</td>
+                    <td>山田一郎</td>
+                    <td class="text-center">
+                      <div class="flex justify-center space-x-2">
+                        <button class="p-1 rounded-full text-green-600 hover:bg-green-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </button>
+                        <button class="p-1 rounded-full text-red-600 hover:bg-red-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- 使用実績一覧テーブル - 請求済 -->
+          <div x-show="activeTab === 'billed'" class="card-body p-0">
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>登録日</th>
+                    <th>顧客名</th>
+                    <th>納品先</th>
+                    <th>商品名</th>
+                    <th>数量</th>
+                    <th>金額</th>
+                    <th>請求番号</th>
+                    <th>請求日</th>
+                    <th class="text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 使用実績データ行 - 請求済 -->
+                  <tr>
+                    <td>2024/04/18</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社山田商事</a>
+                    </td>
+                    <td>東京本社</td>
+                    <td>シャトー・マルゴー 2018</td>
+                    <td>1</td>
+                    <td>¥55,000</td>
+                    <td>
+                      <a href="invoice-detail.html" class="text-primary">B-0045</a>
+                    </td>
+                    <td>2024/04/30</td>
+                    <td class="text-right">
+                      <a href="#" class="table-link">詳細</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2024/04/15</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社山田商事</a>
+                    </td>
+                    <td>東京本社</td>
+                    <td>モエ・エ・シャンドン ブリュット</td>
+                    <td>2</td>
+                    <td>¥30,000</td>
+                    <td>
+                      <a href="invoice-detail.html" class="text-primary">B-0045</a>
+                    </td>
+                    <td>2024/04/30</td>
+                    <td class="text-right">
+                      <a href="#" class="table-link">詳細</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2024/04/10</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">有限会社佐藤
+                      <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">有限会社佐藤工業</a>
+                    </td>
+                    <td>大阪本社</td>
+                    <td>バローロ・リゼルヴァ 2017</td>
+                    <td>1</td>
+                    <td>¥30,000</td>
+                    <td>
+                      <a href="invoice-detail.html" class="text-primary">B-0044</a>
+                    </td>
+                    <td>2024/04/15</td>
+                    <td class="text-right">
+                      <a href="#" class="table-link">詳細</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2024/04/08</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社中村電機</a>
+                    </td>
+                    <td>福岡支店</td>
+                    <td>シャブリ グラン・クリュ 2019</td>
+                    <td>2</td>
+                    <td>¥50,000</td>
+                    <td>
+                      <a href="invoice-detail.html" class="text-primary">B-0044</a>
+                    </td>
+                    <td>2024/04/15</td>
+                    <td class="text-right">
+                      <a href="#" class="table-link">詳細</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2024/04/05</td>
+                    <td>
+                      <a href="customer-detail.html" class="text-primary font-medium">株式会社山田商事</a>
+                    </td>
+                    <td>レストラン「フレンチ山田」</td>
+                    <td>ソーヴィニヨン・ブラン 2021</td>
+                    <td>2</td>
+                    <td>¥40,000</td>
+                    <td>
+                      <a href="invoice-detail.html" class="text-primary">B-0043</a>
+                    </td>
+                    <td>2024/04/15</td>
+                    <td class="text-right">
+                      <a href="#" class="table-link">詳細</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ページネーション -->
+          <div class="pagination">
+            <div class="pagination-info">
+              <span class="font-medium">1</span> ページ
+              <span class="font-medium">10</span> 件表示（全
+              <span class="font-medium">28</span> 件）
+            </div>
+            <div class="pagination-controls">
+              <a href="#" class="pagination-button" aria-label="前のページ">&lt;</a>
+              <a href="#" class="pagination-button active">1</a>
+              <a href="#" class="pagination-button">2</a>
+              <a href="#" class="pagination-button hidden md:inline-flex">3</a>
+              <a href="#" class="pagination-button" aria-label="次のページ">&gt;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 選択アイテム詳細モーダル -->
+        <div class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="detailModal">
+          <div class="bg-white rounded-lg w-full max-w-4xl mx-4">
+            <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+              <h3 class="text-lg font-medium">使用実績詳細</h3>
+              <button class="text-gray-500 hover:text-gray-700" onclick="document.getElementById('detailModal').classList.add('hidden')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500 mb-2">基本情報</h4>
+                  <div class="space-y-2">
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">登録日</div>
+                      <div class="col-span-2 text-sm font-medium">2024/04/28</div>
+                    </div>
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">顧客名</div>
+                      <div class="col-span-2 text-sm font-medium">株式会社山田商事</div>
+                    </div>
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">納品先</div>
+                      <div class="col-span-2 text-sm font-medium">東京本社</div>
+                    </div>
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">登録者</div>
+                      <div class="col-span-2 text-sm font-medium">山田一郎</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500 mb-2">承認情報</h4>
+                  <div class="space-y-2">
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">承認ステータス</div>
+                      <div class="col-span-2">
+                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">未承認</span>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">請求ステータス</div>
+                      <div class="col-span-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-medium">未請求</span>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3">
+                      <div class="text-sm text-gray-500">請求予定月</div>
+                      <div class="col-span-2 text-sm font-medium">2024年5月</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="text-sm font-medium text-gray-500 mb-2">使用商品明細</h4>
+              <table class="min-w-full divide-y divide-gray-200 mb-6">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">商品コード</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">商品名</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">単価</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">数量</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">小計</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">P001</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">シャトー・マルゴー 2018</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">¥55,000</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">¥110,000</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="bg-gray-50">
+                    <td colspan="4" class="px-6 py-4 text-right text-sm font-medium text-gray-900">合計</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">¥110,000</td>
+                  </tr>
+                </tfoot>
+              </table>
+
+              <h4 class="text-sm font-medium text-gray-500 mb-2">使用目的・備考</h4>
+              <div class="bg-gray-50 p-4 rounded mb-6">
+                <p class="text-sm text-gray-700">社内ワインセミナー用に使用。部署横断の交流イベントとして開催しました。</p>
+              </div>
+
+              <div class="flex justify-end space-x-2">
+                <button class="btn btn-ghost" onclick="document.getElementById('detailModal').classList.add('hidden')">キャンセル</button>
+                <button class="btn btn-danger">棄却</button>
+                <button class="btn btn-primary">承認・請求連携</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // ページ読み込み時に共通スクリプトを実行
+    document.addEventListener('DOMContentLoaded', function() {
+      // サイドナビの現在のページをアクティブにする
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === 'invoice-list.html') {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+
+      // チェックボックス操作と一括アクション有効化の処理
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const bulkActions = document.querySelectorAll('.action-area button');
+      
+      // 全選択チェックボックスの処理
+      if (checkboxes.length > 0) {
+        const headerCheckbox = checkboxes[0];
+        const itemCheckboxes = Array.from(checkboxes).slice(1);
+        
+        headerCheckbox.addEventListener('change', function() {
+          const isChecked = this.checked;
+          itemCheckboxes.forEach(checkbox => {
+            checkbox.checked = isChecked;
+          });
+          
+          // 一括アクションボタンの有効/無効切り替え
+          toggleBulkActions();
+        });
+        
+        itemCheckboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+            // ヘッダーチェックボックスの状態更新
+            headerCheckbox.checked = itemCheckboxes.every(cb => cb.checked);
+            headerCheckbox.indeterminate = !headerCheckbox.checked && itemCheckboxes.some(cb => cb.checked);
+            
+            // 一括アクションボタンの有効/無効切り替え
+            toggleBulkActions();
+          });
+        });
+        
+        function toggleBulkActions() {
+          const anyChecked = itemCheckboxes.some(cb => cb.checked);
+          bulkActions.forEach(button => {
+            button.disabled = !anyChecked;
+          });
+        }
+      }
+
+      // 詳細モーダル表示の仕組み（サンプル用）
+      const detailLinks = document.querySelectorAll('.table-link');
+      const detailModal = document.getElementById('detailModal');
+      
+      if (detailLinks && detailModal) {
+        detailLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            detailModal.classList.remove('hidden');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>納品先一覧 | ワイサポ販売管理システム</title>
+  <meta data-page-title="納品先一覧" content="納品先一覧">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドナビゲーション -->
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            受注管理
+          </a>
+          <a href="customer-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            顧客管理
+          </a>
+          <a href="inventory.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+            </svg>
+            在庫管理
+          </a>
+          <a href="activity-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            活動管理
+          </a>
+          <a href="discount-rules.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+            取引調整
+          </a>
+          <a href="invoice-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            請求回収管理
+          </a>
+          <a href="delivery-status.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品状況確認
+          </a>
+          <a href="dashboard.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            ダッシュボード
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ユーザー：<span class="font-medium">田中太郎</span></div>
+          <div>ワイサポ販売管理システム v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <!-- ヘッダー -->
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">納品先一覧</div>
+          <span class="ml-3 px-2 bg-red-100 text-red-800 text-xs rounded-full">社内管理画面</span>
+        </div>
+        <div class="header-actions">
+          <span class="mr-4 hidden md:inline-block">田中太郎</span>
+          <button class="notification-badge bg-gray-200 rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <span class="notification-indicator">3</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- コンテンツエリア -->
+      <main class="content">
+        <!-- 検索フィルター部分 -->
+        <div class="filter-area" x-data="{ advancedFilter: false }">
+          <div class="filter-area-header">
+            <h2 class="filter-area-title">検索・絞り込み</h2>
+            <button @click="advancedFilter = !advancedFilter" class="filter-area-toggle">
+              詳細検索 <span x-text="advancedFilter ? '▲' : '▼'"></span>
+            </button>
+          </div>
+          
+          <div class="filter-area-content">
+            <div class="form-group">
+              <label class="form-label">顧客名</label>
+              <input type="text" class="form-control" placeholder="顧客名を入力">
+            </div>
+            <div class="form-group">
+              <label class="form-label">納品先住所</label>
+              <input type="text" class="form-control" placeholder="住所を入力">
+            </div>
+          </div>
+          
+          <!-- 詳細検索部分（トグル表示） -->
+          <div x-show="advancedFilter" class="mt-4 border-t pt-4">
+            <div class="filter-area-content">
+              <div class="form-group">
+                <label class="form-label">地域</label>
+                <select class="form-control">
+                  <option>すべて</option>
+                  <option>東京都</option>
+                  <option>大阪府</option>
+                  <option>愛知県</option>
+                  <option>福岡県</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">デフォルト販売区分</label>
+                <select class="form-control">
+                  <option>すべて</option>
+                  <option>マイセラー販売</option>
+                  <option>通常販売</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">最終納品日</label>
+                <div class="flex items-center space-x-2">
+                  <input type="date" class="form-control">
+                  <span>〜</span>
+                  <input type="date" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-area-actions">
+            <button class="btn btn-ghost">リセット</button>
+            <button class="btn btn-primary">検索</button>
+          </div>
+        </div>
+
+        <!-- アクションボタンエリア -->
+        <div class="action-area">
+          <div>
+            <a href="delivery-location-new.html" class="btn btn-success">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              新規納品先登録
+            </a>
+          </div>
+          <div>
+            <button class="btn btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              CSVダウンロード
+            </button>
+          </div>
+        </div>
+
+        <!-- タブ切り替え -->
+        <div class="card mb-6">
+          <div class="border-b border-gray-200">
+            <nav class="-mb-px flex space-x-8">
+              <a href="customer-list.html" class="border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">顧客一覧</a>
+              <a href="delivery-location-list.html" class="border-b-2 border-red-500 py-4 px-1 text-sm font-medium text-red-600">納品先一覧</a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- 納品先一覧テーブル -->
+        <div class="card">
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>納品先ID</th>
+                  <th>顧客名</th>
+                  <th>納品先名</th>
+                  <th>住所</th>
+                  <th>販売区分</th>
+                  <th>最終納品日</th>
+                  <th class="text-right">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 納品先データ行 -->
+                <tr>
+                  <td>D-00101</td>
+                  <td>株式会社山田商事</td>
+                  <td class="text-primary font-medium">
+                    <a href="delivery-location-detail.html" class="table-link">本社</a>
+                  </td>
+                  <td>東京都渋谷区〇〇1-2-3</td>
+                  <td>
+                    <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-medium">マイセラー販売</span>
+                  </td>
+                  <td>2024/04/20</td>
+                  <td class="text-right">
+                    <a href="delivery-location-detail.html" class="table-link mr-3">詳細</a>
+                    <a href="delivery-location-edit.html" class="table-link">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>D-00102</td>
+                  <td>株式会社山田商事</td>
+                  <td class="text-primary font-medium">
+                    <a href="delivery-location-detail.html" class="table-link">第二営業所</a>
+                  </td>
+                  <td>東京都新宿区〇〇4-5-6</td>
+                  <td>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">通常販売</span>
+                  </td>
+                  <td>2024/04/15</td>
+                  <td class="text-right">
+                    <a href="delivery-location-detail.html" class="table-link mr-3">詳細</a>
+                    <a href="delivery-location-edit.html" class="table-link">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>D-00201</td>
+                  <td>有限会社佐藤工業</td>
+                  <td class="text-primary font-medium">
+                    <a href="delivery-location-detail.html" class="table-link">本社</a>
+                  </td>
+                  <td>大阪府大阪市〇〇7-8-9</td>
+                  <td>
+                    <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-medium">マイセラー販売</span>
+                  </td>
+                  <td>2024/04/10</td>
+                  <td class="text-right">
+                    <a href="delivery-location-detail.html" class="table-link mr-3">詳細</a>
+                    <a href="delivery-location-edit.html" class="table-link">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>D-00301</td>
+                  <td>株式会社中村電機</td>
+                  <td class="text-primary font-medium">
+                    <a href="delivery-location-detail.html" class="table-link">福岡支店</a>
+                  </td>
+                  <td>福岡県福岡市〇〇10-11-12</td>
+                  <td>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">通常販売</span>
+                  </td>
+                  <td>2024/04/05</td>
+                  <td class="text-right">
+                    <a href="delivery-location-detail.html" class="table-link mr-3">詳細</a>
+                    <a href="delivery-location-edit.html" class="table-link">編集</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>D-00401</td>
+                  <td>株式会社高橋製作所</td>
+                  <td class="text-primary font-medium">
+                    <a href="delivery-location-detail.html" class="table-link">名古屋工場</a>
+                  </td>
+                  <td>愛知県名古屋市〇〇13-14-15</td>
+                  <td>
+                    <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-medium">マイセラー販売</span>
+                  </td>
+                  <td>2024/03/28</td>
+                  <td class="text-right">
+                    <a href="delivery-location-detail.html" class="table-link mr-3">詳細</a>
+                    <a href="delivery-location-edit.html" class="table-link">編集</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- ページネーション -->
+          <div class="pagination">
+            <div class="pagination-info">
+              <span class="font-medium">1</span> ページ
+              <span class="font-medium">10</span> 件表示（全
+              <span class="font-medium">38</span> 件）
+            </div>
+            <div class="pagination-controls">
+              <a href="#" class="pagination-button" aria-label="前のページ">&lt;</a>
+              <a href="#" class="pagination-button active">1</a>
+              <a href="#" class="pagination-button">2</a>
+              <a href="#" class="pagination-button hidden md:inline-flex">3</a>
+              <span class="pagination-button">...</span>
+              <a href="#" class="pagination-button">4</a>
+              <a href="#" class="pagination-button" aria-label="次のページ">&gt;</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // ページ読み込み時に共通スクリプトを実行
+    document.addEventListener('DOMContentLoaded', function() {
+      // サイドナビの現在のページをアクティブにする
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === 'customer-list.html') {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

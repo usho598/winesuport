@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規納品先登録 | ワイサポ販売管理システム</title>
+  <meta data-page-title="新規納品先登録" content="新規納品先登録">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/layout.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドナビゲーション -->
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <a href="../index.html" class="text-white">ワイサポ</a>
+      </div>
+      <div class="side-nav-content">
+        <nav class="mt-4">
+          <a href="index.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            受注管理
+          </a>
+          <a href="customer-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            顧客管理
+          </a>
+          <a href="inventory.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+            </svg>
+            在庫管理
+          </a>
+          <a href="activity-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            活動管理
+          </a>
+          <a href="discount-rules.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+            取引調整
+          </a>
+          <a href="invoice-list.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            請求回収管理
+          </a>
+          <a href="delivery-status.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            納品状況確認
+          </a>
+          <a href="dashboard.html" class="side-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            ダッシュボード
+          </a>
+        </nav>
+      </div>
+      <div class="side-nav-footer">
+        <div class="text-xs">
+          <div>ユーザー：<span class="font-medium">田中太郎</span></div>
+          <div>ワイサポ販売管理システム v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <!-- ヘッダー -->
+      <header class="header">
+        <div class="flex items-center">
+          <button class="mobile-nav-button mr-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="header-title">新規納品先登録</div>
+          <span class="ml-3 px-2 bg-red-100 text-red-800 text-xs rounded-full">社内管理画面</span>
+        </div>
+        <div class="header-actions">
+          <span class="mr-4 hidden md:inline-block">田中太郎</span>
+          <button class="notification-badge bg-gray-200 rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <span class="notification-indicator">3</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- コンテンツエリア -->
+      <main class="content">
+        <!-- ナビゲーションパス -->
+        <div class="mb-6">
+          <nav class="text-sm breadcrumbs">
+            <ol class="flex items-center space-x-2">
+              <li><a href="delivery-location-list.html" class="text-primary hover:text-primary-dark">納品先一覧</a></li>
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <span class="font-medium">新規納品先登録</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- 納品先登録フォーム -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">納品先情報</h2>
+          </div>
+          <div class="card-body">
+            <form>
+              <!-- 顧客選択 -->
+              <div class="mt-4">
+                <div class="form-group">
+                  <label class="form-label required">顧客</label>
+                  <div class="flex">
+                    <select class="form-control">
+                      <option>選択してください</option>
+                      <option>株式会社山田商事</option>
+                      <option>有限会社佐藤工業</option>
+                      <option>株式会社中村電機</option>
+                      <option>株式会社高橋製作所</option>
+                      <option>渡辺建設株式会社</option>
+                    </select>
+                    <a href="customer-new.html" class="btn btn-outline ml-2">新規顧客</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 納品先基本情報 -->
+              <div class="mt-8">
+                <h3 class="text-lg font-medium mb-4">納品先基本情報</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="form-group">
+                    <label class="form-label required">納品先名</label>
+                    <input type="text" class="form-control" placeholder="本社">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">デフォルト販売区分</label>
+                    <select class="form-control">
+                      <option>マイセラー販売</option>
+                      <option>通常販売</option>
+                    </select>
+                    <div class="mt-1 text-xs text-gray-500">※マイセラー販売: 納品時に在庫計上し、消費登録時に売上計上<br>※通常販売: 納品確認時に売上計上</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 住所情報 -->
+              <div class="mt-8">
+                <h3 class="text-lg font-medium mb-4">納品先住所</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="form-group">
+                    <label class="form-label required">郵便番号</label>
+                    <div class="flex">
+                      <input type="text" class="form-control" placeholder="000-0000">
+                      <button type="button" class="btn btn-outline ml-2">住所検索</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">都道府県</label>
+                    <select class="form-control">
+                      <option>選択してください</option>
+                      <option>東京都</option>
+                      <option>大阪府</option>
+                      <option>愛知県</option>
+                      <option>福岡県</option>
+                      <!-- 他の都道府県 -->
+                    </select>
+                  </div>
+                  <div class="form-group md:col-span-2">
+                    <label class="form-label required">市区町村</label>
+                    <input type="text" class="form-control" placeholder="市区町村">
+                  </div>
+                  <div class="form-group md:col-span-2">
+                    <label class="form-label required">番地・建物名</label>
+                    <input type="text" class="form-control" placeholder="番地・建物名">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 連絡先情報 -->
+              <div class="mt-8">
+                <h3 class="text-lg font-medium mb-4">納品先連絡先</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="form-group">
+                    <label class="form-label required">電話番号</label>
+                    <input type="tel" class="form-control" placeholder="000-0000-0000">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">FAX番号</label>
+                    <input type="tel" class="form-control" placeholder="000-0000-0000">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 担当者情報 -->
+              <div class="mt-8">
+                <h3 class="text-lg font-medium mb-4">納品先担当者</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="form-group">
+                    <label class="form-label">担当者氏名</label>
+                    <input type="text" class="form-control" placeholder="山田 太郎">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">部署名</label>
+                    <input type="text" class="form-control" placeholder="営業部">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">役職</label>
+                    <input type="text" class="form-control" placeholder="課長">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">メールアドレス</label>
+                    <input type="email" class="form-control" placeholder="yamada@example.com">
+                  </div>
+                </div>
+              </div>
+
+              <!-- マイセラー関連情報（マイセラー販売の場合のみ） -->
+              <div class="mt-8" x-data="{ showMycellar: true }">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="text-lg font-medium">マイセラー情報</h3>
+                  <div class="flex items-center">
+                    <span class="mr-2 text-sm">表示</span>
+                    <button 
+                      type="button" 
+                      class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                      :class="showMycellar ? 'bg-red-600' : 'bg-gray-200'"
+                      @click="showMycellar = !showMycellar"
+                    >
+                      <span 
+                        class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
+                        :class="showMycellar ? 'translate-x-5' : 'translate-x-0'"
+                      ></span>
+                    </button>
+                  </div>
+                </div>
+                
+                <div x-show="showMycellar" class="bg-gray-50 p-4 rounded-lg">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group">
+                      <label class="form-label">マイセラー設置場所</label>
+                      <input type="text" class="form-control" placeholder="例：厨房内冷蔵庫横">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">収容可能本数</label>
+                      <input type="number" class="form-control" placeholder="12">
+                    </div>
+                    <div class="form-group md:col-span-2">
+                      <label class="form-label">特記事項</label>
+                      <textarea class="form-control" rows="3" placeholder="マイセラーに関する特記事項"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 備考 -->
+              <div class="mt-8">
+                <div class="form-group">
+                  <label class="form-label">備考</label>
+                  <textarea class="form-control" rows="4" placeholder="備考・特記事項があれば入力してください"></textarea>
+                </div>
+              </div>
+
+              <!-- アクションボタン -->
+              <div class="mt-8 flex justify-end space-x-4">
+                <a href="delivery-location-list.html" class="btn btn-ghost">キャンセル</a>
+                <button type="submit" class="btn btn-primary">登録する</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // ページ読み込み時に共通スクリプトを実行
+    document.addEventListener('DOMContentLoaded', function() {
+      // サイドナビの現在のページをアクティブにする
+      const navLinks = document.querySelectorAll('.side-nav-item');
+      
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === 'customer-list.html') {
+          link.classList.add('active');
+          link.classList.add('bg-red-900');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

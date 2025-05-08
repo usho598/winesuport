@@ -334,7 +334,7 @@
                   <a href="#" aria-current="page" class="z-10 bg-red-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
                     1
                   </a>
-                  <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+<a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
                     2
                   </a>
                   <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
@@ -357,6 +357,27 @@
         </div>
 
         <div class="bg-white rounded shadow overflow-hidden" x-show="viewType === 'usage'">
+          <div class="p-4 bg-blue-50 border-l-4 border-blue-400">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3 flex justify-between items-center w-full">
+                <p class="text-sm text-blue-700">
+                  未承認の使用実績データが <span class="font-medium">28件</span> あります。確認・承認作業を行ってください。
+                </p>
+                <a href="usage-record-list.html" class="text-sm text-blue-700 font-medium hover:text-blue-900 ml-4">
+                  詳細画面へ
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
               <tr>
@@ -650,9 +671,31 @@
         const href = link.getAttribute('href');
         if (href === currentPage) {
           link.classList.add('active');
-          link.classList.add('bg-red-900');
         }
       });
+
+      // モバイルナビゲーションの切り替え
+      const mobileNavButton = document.querySelector('.mobile-nav-button');
+      const sideNav = document.querySelector('.side-nav');
+      
+      if (mobileNavButton) {
+        mobileNavButton.addEventListener('click', function() {
+          sideNav.classList.toggle('mobile-open');
+        });
+      }
+
+      // 通知バッジの処理
+      const notificationBadge = document.querySelector('.notification-badge');
+      if (notificationBadge) {
+        notificationBadge.addEventListener('click', function() {
+          alert('通知メニューを表示します（実装予定）');
+        });
+      }
+
+      // ページ固有の追加スクリプトがある場合は実行
+      if (typeof pageInit === 'function') {
+        pageInit();
+      }
     });
   </script>
 </body>
